@@ -1,0 +1,18 @@
+<beans>
+	<bean id="student" class="com.melo.pojo.Student">
+		<!-- String类型 -->
+		<property name="name" value="jianbrother"/>
+		<!-- 引用类型 -->
+		<property name="course" ref="course"/>
+		<property name="brief" value="this is me, different me"/>
+	</bean>
+
+	<!-- 该类有一个初始化方法 -->
+	<bean id="course" class="com.melo.pojo.Course"
+		init-method="init">
+		<!-- String类型 -->
+		<property name="name" value="spring"/>
+		<!-- Integer类型 -->
+		<property name="age" value="18"/>
+	</bean>
+</beans>
