@@ -6,7 +6,7 @@ public class User {
     private String website;
 
     public User(){}
-    public User(int id, String name, String website) {
+    public User(Integer id, String name, String website) {
         this.id = id;
         this.name = name;
         this.website = website;

@@ -7,7 +7,13 @@ public class Student {
 	private Course course;
 
 	private String brief;
-	
+
+	public Student(String name, Course course, String brief) {
+		this.name = name;
+		this.course = course;
+		this.brief = brief;
+	}
+
 	public String getName() {
 		return name;
 	}

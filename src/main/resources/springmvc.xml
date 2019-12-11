@@ -1,0 +1,11 @@
+<beans>
+    <!--handler-->
+    <bean id="/queryUser" class="com.melo.springmvc.handler.QueryUserHandler"/>
+    <bean id="/addUser" class="com.melo.springmvc.handler.AddUserHandler"/>
+    <!--mapping-->
+    <bean class="com.melo.springmvc.mapping.SimpleHandlerMapping" init-method="init"/>
+    <bean class="com.melo.springmvc.mapping.BeanNameHandlerMapping" init-method="init"/>
+    <!--adapter-->
+    <bean class="com.melo.springmvc.adapter.HttpRequestHandlerAdapter"/>
+
+</beans>

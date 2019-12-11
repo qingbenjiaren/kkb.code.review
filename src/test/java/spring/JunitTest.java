@@ -1,10 +1,12 @@
 package spring;
 
+import com.melo.pojo.Course;
 import com.melo.pojo.Student;
-import com.melo.spring.bean.factory.support.DefaultListableBeanFactory;
-import com.melo.spring.bean.resource.ClasspathResource;
-import com.melo.spring.bean.resource.Resource;
-import com.melo.spring.bean.xml.XmlBeanDefinitionReader;
+import com.melo.spring.reviewbean.factory.support.DefaultListableBeanFactory;
+import com.melo.spring.reviewbean.resource.ClasspathResource;
+import com.melo.spring.reviewbean.resource.Resource;
+import com.melo.spring.reviewbean.utils.ReflectUtils;
+import com.melo.spring.reviewbean.xml.XmlBeanDefinitionReader;
 import org.junit.Test;
 
 import java.io.InputStream;
@@ -25,5 +27,31 @@ public class JunitTest {
         beanDefinitionReader.loadBeanDefinitions(inputStream);
         Student student = (Student) beanFactory.getBean("student");
         System.out.println(student);
+    }
+
+    @Test
+    public void testReflectUtils() throws ClassNotFoundException {
+        Student user = (Student) ReflectUtils.createObject(Class.forName("com.melo.pojo.Student"),"112",new Course("asda",123),"000");
+        System.out.println(user);
+
+    }
+    @Test
+    public void test11(){
+        Object[] var;
+        if(1 == 1){
+            var = new Object[4];
+        }else{
+            var = new Object[2];
+        }
+        for(int i = 0;i<var.length;i++){
+            var[i] = "123123";
+        }
+        test1(var);
+    }
+
+    public void test1(Object ... args){
+        for(Object obj : args){
+            System.out.println(obj);
+        }
     }
 }
